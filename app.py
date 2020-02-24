@@ -53,8 +53,9 @@ class InstagramBot:
             driver.get(pic_href)
             driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
             try:
-                # driver.find_element_by_class_name("Like").click()
-                driver.find_element_by_class_name("dCJp8").click()
+                span_ = driver.find_element_by_xpath("//span[@aria-label='Like']")
+                span_.find_element_by_xpath('..').click()
+                # driver.find_element_by_class_name("dCJp8").click()
                 time.sleep(25)
             except Exception as err:
                 print(err)
